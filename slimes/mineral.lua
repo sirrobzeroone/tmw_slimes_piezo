@@ -51,6 +51,12 @@ mobs:register_mob("tmw_slimes:mineral_slime", {
 	end
 })
 
+minetest.register_craft({
+	type = "cooking",
+	output = "default:steel_ingot",
+	recipe = "tmw_slimes:mineral_goo"
+})
+
 mobs:spawn({
 	name = "tmw_slimes:mineral_slime",
 	nodes = {

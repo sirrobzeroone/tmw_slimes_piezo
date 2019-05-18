@@ -52,6 +52,14 @@ mobs:register_mob("tmw_slimes:savannah_slime", {
 
 minetest.override_item("tmw_slimes:savannah_goo", {on_use = minetest.item_eat(1)})
 
+if minetest.registered_items["mesecons_materials:glue"] then
+	minetest.register_craft({
+		type = "cooking",
+		output = "mesecons_materials:glue",
+		recipe = "tmw_slimes:savannah_goo"
+	})
+end
+
 mobs:spawn({
 	name = "tmw_slimes:savannah_slime",
 	nodes = {

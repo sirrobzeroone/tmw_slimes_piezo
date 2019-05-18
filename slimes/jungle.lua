@@ -53,10 +53,10 @@ mobs:register_mob("tmw_slimes:jungle_slime", {
 
 minetest.override_item("tmw_slimes:jungle_goo", {on_use = minetest.item_eat(3)})
 
-if minetest.registered_items["mesecons:glue"] then
+if minetest.registered_items["mesecons_materials:glue"] then
 	minetest.register_craft({
 		type = "cooking",
-		output = "mesecons:glue",
+		output = "mesecons_materials:glue",
 		recipe = "tmw_slimes:jungle_goo"
 	})
 end
