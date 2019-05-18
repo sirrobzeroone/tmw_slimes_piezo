@@ -13,6 +13,7 @@ tmw_slimes.add_slime = function(string, aquatic)
 	minetest.register_craftitem("tmw_slimes:"..string.."_goo", {
 		inventory_image = "tmw_slime_goo.png^[colorize:"..tmw_slimes.colors[string],
 		description = proper_name.." Goo",
+		groups = {slime = 1},
 	})
 	minetest.register_node("tmw_slimes:"..string.."_goo_block", {
 		tiles = {"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors[string].."^[colorize:#0000:25"},
