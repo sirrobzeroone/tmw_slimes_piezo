@@ -50,17 +50,17 @@ end
 tmw_slimes.weak_dmg   = 2
 tmw_slimes.medium_dmg = 5
 tmw_slimes.strong_dmg = 9
-tmw_slimes.deadly_dmg = 1000
+tmw_slimes.deadly_dmg = 20
 
 tmw_slimes.pervasive = 4000
 tmw_slimes.common    = 8000
 tmw_slimes.uncommon  = 12000
 tmw_slimes.rare      = 24000
 
-tmw_slimes.pervasive_max = 12
-tmw_slimes.common_max    = 9
-tmw_slimes.uncommon_max  = 6
-tmw_slimes.rare_max      = 3
+tmw_slimes.pervasive_max = 8
+tmw_slimes.common_max    = 6
+tmw_slimes.uncommon_max  = 4
+tmw_slimes.rare_max      = 2
 
 tmw_slimes.absorb_nearby_items = function(ent)
 	local pos = ent.object:get_pos()

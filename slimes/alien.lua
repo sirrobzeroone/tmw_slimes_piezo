@@ -76,5 +76,5 @@ mobs:spawn({
 	chance = tmw_slimes.common,
 	active_object_count = tmw_slimes.common_max,
 	min_height = -31000,
-	max_height = -512,
+	max_height = 31000,
 })
