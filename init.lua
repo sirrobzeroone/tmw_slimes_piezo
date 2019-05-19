@@ -47,15 +47,15 @@ tmw_slimes.add_slime = function(string, aquatic)
 	})
 	
 end
-tmw_slimes.weak_dmg   = 2
+tmw_slimes.weak_dmg   = 1
 tmw_slimes.medium_dmg = 5
-tmw_slimes.strong_dmg = 9
-tmw_slimes.deadly_dmg = 20
+tmw_slimes.strong_dmg = 10
+tmw_slimes.deadly_dmg = 50
 
-tmw_slimes.pervasive = 4000
-tmw_slimes.common    = 8000
-tmw_slimes.uncommon  = 12000
-tmw_slimes.rare      = 24000
+tmw_slimes.pervasive = 5000
+tmw_slimes.common    = 10000
+tmw_slimes.uncommon  = 15000
+tmw_slimes.rare      = 25000
 
 tmw_slimes.pervasive_max = 8
 tmw_slimes.common_max    = 6
@@ -142,7 +142,7 @@ end
 tmw_slimes.colors["cloud"] = "#EEF:180"
 tmw_slimes.add_slime("cloud", true)
 
-tmw_slimes.colors["algae"] = "#0FD:180"
+tmw_slimes.colors["algae"] = "#0C9:180"
 tmw_slimes.add_slime("algae", true)
 
 tmw_slimes.colors["ocean"] = "#00C:200"

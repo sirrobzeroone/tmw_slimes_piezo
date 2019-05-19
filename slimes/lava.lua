@@ -25,14 +25,12 @@ mobs:register_mob("tmw_slimes:lava_slime", {
 	jump_height = 7,
 	jump = true,
 	view_range = 15,
-	glow = 10,
 	--fly = true,
 	--fly_in = {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
 	drops = {
 		{name = "tmw_slimes:lava_goo", chance = 1, min = 0, max = 2},
 	},
 	water_damage = 10,
-	water_damage = 0,
 	lava_damage = 0,
 	light_damage = 0,
 	replace_rate = 2,
@@ -60,6 +58,8 @@ mobs:register_mob("tmw_slimes:lava_slime", {
 	end]]
 })
 
+minetest.registered_entities["tmw_slimes:lava_slime"].glow = 10
+
 minetest.override_item("tmw_slimes:lava_goo", {on_use = minetest.item_eat(-20)})
 
 local g = table.copy(minetest.registered_nodes["tmw_slimes:lava_goo_block"].groups)
@@ -69,7 +69,7 @@ minetest.override_item("tmw_slimes:lava_goo_block", {groups=table.copy(g)})
 mobs:spawn({
 	name = "tmw_slimes:lava_slime",
 	nodes = {
-		"default:lava_source",
+		"group:lava",
 	},
 	min_light = 0,
 	max_light = 16,
