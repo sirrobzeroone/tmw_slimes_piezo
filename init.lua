@@ -52,10 +52,15 @@ tmw_slimes.medium_dmg = 5
 tmw_slimes.strong_dmg = 9
 tmw_slimes.deadly_dmg = 1000
 
-tmw_slimes.pervasive = 5000
-tmw_slimes.common    = 10000
-tmw_slimes.uncommon  = 15000
-tmw_slimes.rare      = 25000
+tmw_slimes.pervasive = 4000
+tmw_slimes.common    = 8000
+tmw_slimes.uncommon  = 12000
+tmw_slimes.rare      = 24000
+
+tmw_slimes.pervasive_max = 12
+tmw_slimes.common_max    = 9
+tmw_slimes.uncommon_max  = 6
+tmw_slimes.rare_max      = 3
 
 tmw_slimes.absorb_nearby_items = function(ent)
 	local pos = ent.object:get_pos()
@@ -67,12 +72,12 @@ tmw_slimes.absorb_nearby_items = function(ent)
 			table.insert(ent.stomach, oent.itemstring)
 			obj:remove()
 			minetest.sound_play("item_slurp", {pos = pos, max_hear_distance = 10, gain = 0.7})
+			ent.lifetimer = (ent.lifetimer and ent.lifetimer > 20000) and ent.lifetimer + 7200 or 27200
+			 -- Keep this slime around even after unload for at least another 2 hours per item picked up, 
+			 -- so slimes don't just grab killed players' items and despawn.
+			 
 			break --Pick up only one item per step
 		end
-	end
-	if ent.stomach then
-		ent.lifetimer = 99999999
-		ent.remove_ok = false
 	end
 end
 

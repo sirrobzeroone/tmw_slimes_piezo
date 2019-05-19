@@ -68,7 +68,7 @@ mobs:spawn({
 	min_light = 0,
 	max_light = 16,
 	chance = tmw_slimes.uncommon,
-	active_object_count = 4,
+	active_object_count = tmw_slimes.uncommon_max,
 	min_height = -31000,
 	max_height = 31000,
 })
