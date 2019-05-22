@@ -76,7 +76,7 @@ mobs:register_mob("tmw_slimes:uber_slime", {
 				texture = "uber_slime_particle.png^[colorize:"..tmw_slimes.colors["uber"].."^[colorize:#FFF:96"
 			})
 			self.particle_spawner_dt = 0
-			self.object:set_hp(math.min(self.object:get_hp()+math.random(1,6),60)) -- Regenerate health
+			self.health = math.min(self.object:get_hp()+math.random(1,6),60) -- Regenerate health
 		end
 		self.particle_spawner_dt = self.particle_spawner_dt + dtime
 		
@@ -112,10 +112,11 @@ mobs:register_mob("tmw_slimes:uber_slime", {
 		end
 	end,
 	after_activate = function(self)
+		self.health = 60
 		self.v = 0
-		self.max_speed_forward = 8.5
-		self.max_speed_reverse = 8.5
-		self.accel = 2.5
+		self.max_speed_forward = 7
+		self.max_speed_reverse = 7
+		self.accel = 3
 		self.driver_attach_at = {x = 0, y = 11, z = -0.5}
 		self.driver_eye_offset = {x = 0, y = 40, z = 0}
 		self.driver_scale = {y=0.25,x=0.25}
