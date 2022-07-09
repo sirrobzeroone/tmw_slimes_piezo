@@ -19,7 +19,7 @@ tmw_slimes_piezo.add_slime = function(string, aquatic)
 		tiles = {"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors[string].."^[colorize:#0000:25"},
 		description = proper_name.." Goo Block",
 		drawtype = "allfaces_optional",
-		use_texture_alpha = true,
+		use_texture_alpha = "blend",
 		groups = {slippery = 2, crumbly=3, oddly_breakable_by_hand = 1},
 		sounds = default.node_sound_snow_defaults(),
 	})
