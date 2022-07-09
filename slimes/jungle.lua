@@ -1,4 +1,4 @@
-mobs:register_mob("tmw_slimes:jungle_slime", {
+mobs:register_mob("tmw_slimes_piezo:jungle_slime", {
 	group_attack = true,
 	type = "monster",
 	passive = false,
@@ -7,7 +7,7 @@ mobs:register_mob("tmw_slimes:jungle_slime", {
 	attack_monsters = false,
 	attack_type = "dogfight",
 	reach = 2,
-	damage = tmw_slimes.medium_dmg,
+	damage = tmw_slimes_piezo.medium_dmg,
 	hp_min = 20,
 	hp_max = 40,
 	armor = 180,
@@ -15,9 +15,9 @@ mobs:register_mob("tmw_slimes:jungle_slime", {
 	visual_size = {x = 2, y = 2},
 	visual = "mesh",
 	mesh = "slime_land.b3d",
-	blood_texture = "tmw_slime_goo.png^[colorize:"..tmw_slimes.colors["jungle"],
+	blood_texture = "tmw_slime_goo.png^[colorize:"..tmw_slimes_piezo.colors["jungle"],
 	textures = {
-		{"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors["jungle"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors["jungle"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors["jungle"]},
+		{"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors["jungle"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors["jungle"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors["jungle"]},
 	},
 	makes_footstep_sound = false,
 	walk_velocity = 0.5,
@@ -27,7 +27,7 @@ mobs:register_mob("tmw_slimes:jungle_slime", {
 	view_range = 15,
 	--fly_in = {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
 	drops = {
-		{name = "tmw_slimes:jungle_goo", chance = 1, min = 0, max = 2},
+		{name = "tmw_slimes_piezo:jungle_goo", chance = 1, min = 0, max = 2},
 	},
 	water_damage = 0,
 	lava_damage = 8,
@@ -43,33 +43,33 @@ mobs:register_mob("tmw_slimes:jungle_slime", {
 		jump_end = 83
 	},
 	do_custom = function(self)
-		tmw_slimes.animate(self)
-		tmw_slimes.absorb_nearby_items(self)
+		tmw_slimes_piezo.animate(self)
+		tmw_slimes_piezo.absorb_nearby_items(self)
 	end,
 	on_die = function(self, pos)
-		tmw_slimes.drop_items(self, pos)
+		tmw_slimes_piezo.drop_items(self, pos)
 	end
 })
 
-minetest.override_item("tmw_slimes:jungle_goo", {on_use = minetest.item_eat(3)})
+minetest.override_item("tmw_slimes_piezo:jungle_goo", {on_use = minetest.item_eat(3)})
 
 if minetest.registered_items["mesecons_materials:glue"] then
 	minetest.register_craft({
 		type = "cooking",
 		output = "mesecons_materials:glue",
-		recipe = "tmw_slimes:jungle_goo"
+		recipe = "tmw_slimes_piezo:jungle_goo"
 	})
 end
 
 mobs:spawn({
-	name = "tmw_slimes:jungle_slime",
+	name = "tmw_slimes_piezo:jungle_slime",
 	nodes = {
 		"default:dirt_with_rainforest_litter"
 	},
 	min_light = 0,
 	max_light = 16,
-	chance = tmw_slimes.pervasive,
-	active_object_count = tmw_slimes.pervasive_max,
+	chance = tmw_slimes_piezo.pervasive,
+	active_object_count = tmw_slimes_piezo.pervasive_max,
 	min_height = -31000,
 	max_height = 31000,
 })

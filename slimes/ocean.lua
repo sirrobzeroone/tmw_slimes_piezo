@@ -1,4 +1,4 @@
-mobs:register_mob("tmw_slimes:ocean_slime", {
+mobs:register_mob("tmw_slimes_piezo:ocean_slime", {
 	group_attack = true,
 	type = "animal",
 	passive = false,
@@ -7,7 +7,7 @@ mobs:register_mob("tmw_slimes:ocean_slime", {
 	attack_monsters = false,
 	attack_type = "dogfight",
 	reach = 2,
-	damage = tmw_slimes.medium_dmg,
+	damage = tmw_slimes_piezo.medium_dmg,
 	hp_min = 20,
 	hp_max = 40,
 	armor = 180,
@@ -15,9 +15,9 @@ mobs:register_mob("tmw_slimes:ocean_slime", {
 	visual_size = {x = 2, y = 2},
 	visual = "mesh",
 	mesh = "slime_liquid.b3d",
-	blood_texture = "tmw_slime_goo.png^[colorize:"..tmw_slimes.colors["ocean"],
+	blood_texture = "tmw_slime_goo.png^[colorize:"..tmw_slimes_piezo.colors["ocean"],
 	textures = {
-		{"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors["ocean"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes.colors["ocean"].."^[colorize:#FFF:96"},
+		{"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors["ocean"],"tmw_slime_goo_block.png^[colorize:"..tmw_slimes_piezo.colors["ocean"].."^[colorize:#FFF:96"},
 	},
 	makes_footstep_sound = false,
 	walk_velocity = 0.5,
@@ -28,7 +28,7 @@ mobs:register_mob("tmw_slimes:ocean_slime", {
 	fly = true,
 	fly_in = {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
 	drops = {
-		{name = "tmw_slimes:ocean_goo", chance = 1, min = 0, max = 2},
+		{name = "tmw_slimes_piezo:ocean_goo", chance = 1, min = 0, max = 2},
 	},
 	water_damage = 0,
 	lava_damage = 256,
@@ -44,25 +44,25 @@ mobs:register_mob("tmw_slimes:ocean_slime", {
 		jump_end = 83
 	},
 	do_custom = function(self)
-		tmw_slimes.animate(self)
-		tmw_slimes.absorb_nearby_items(self)
+		tmw_slimes_piezo.animate(self)
+		tmw_slimes_piezo.absorb_nearby_items(self)
 	end,
 	on_die = function(self, pos)
-		tmw_slimes.drop_items(self, pos)
+		tmw_slimes_piezo.drop_items(self, pos)
 	end
 })
 
-minetest.override_item("tmw_slimes:ocean_goo", {on_use = minetest.item_eat(1)})
+minetest.override_item("tmw_slimes_piezo:ocean_goo", {on_use = minetest.item_eat(1)})
 
 mobs:spawn({
-	name = "tmw_slimes:ocean_slime",
+	name = "tmw_slimes_piezo:ocean_slime",
 	nodes = {
 		"default:water_source",
 	},
 	min_light = 0,
 	max_light = 16,
-	chance = tmw_slimes.common,
-	active_object_count = tmw_slimes.common_max,
+	chance = tmw_slimes_piezo.common,
+	active_object_count = tmw_slimes_piezo.common_max,
 	min_height = -31000,
 	max_height = 31000,
 })
